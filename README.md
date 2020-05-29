@@ -17,7 +17,9 @@ In a default installation, this will be done by the _Jenkins_ user.
 3. `sudo su jenkins`
 4. Install and configure the OCI CLI acoording to following documentation: https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm
 
-Once this is done, we should be able to invoke the OCI CLI from within Jenkins. 
+:white_check_mark: Once this is done, we should be able to invoke the OCI CLI from within Jenkins. 
+
+5. Repeat steps 1 & 2, but reset the shell for user `jenkins`back to `/bin/false` . This prevents direct shell login using the Jenkins account.  
 
 
 
