@@ -10,9 +10,9 @@ pipeline {
             environment {
 
                 stackOcid = "${sh(returnStdout:true,script: '/var/lib/jenkins/bin/oci resource-manager stack list -c ocid1.compartment.oc1..aaaaaaaadykmnzg32nkpqb7qzhckomnecdq2w3dautxq5liwjhzwxnfd2r3a | jq \'.data[] | select(.\"display-name\" == \""+env.JOB_NAME+"\")\' | jq \'.id\'')}"
-                compartment = 'ocid1.compartment.oc1..aaaaaaaadykmnzg32nkpqb7qzhckomnecdq2w3dautxq5liwjhzwxnfd2r3a'
-                ad = 'uFjs:EU-FRANKFURT-1-AD-1'
-                image = 'ocid1.image.oc1.eu-frankfurt-1.aaaaaaaawc63r6yzrrda24bjqg7vzr6ddtj3slaaaiikqu6g7v6mno3gfjeq'
+                compartment = params.compartment
+                ad = params.availability_domain
+                image = params.image
             }
             steps {
                 script {
