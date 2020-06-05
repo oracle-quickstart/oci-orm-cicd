@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    parameters {
+                string(name: 'compartment',  description: 'Target compartment for the ORM Stack')
+                string(name: 'availability_domain',  description: 'Target AD for the ORM Stack')
+                string(name: 'image',  description: 'Image used to spin up the compute node')
+            }
     stages {
         stage('Build') {
             environment {
