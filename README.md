@@ -28,8 +28,8 @@ In a default installation, this will be done by the _Jenkins_ user.
 The ORM stack that Jenkins will create is based upon the Terraform script in the **terraform** folder. 
 It will create following resources: 
 
-* Virtual Cloud Network
-* Public Subnet
+* Virtual Cloud Network (10.1.0.0/16)
+* Public Subnet (10.1.20.0/24)
 * Internet Gateway
 * Route table to attach the Internet Gateway to the public subnet
 * Compute instance 
