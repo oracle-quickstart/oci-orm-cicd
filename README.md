@@ -21,5 +21,17 @@ In a default installation, this will be done by the _Jenkins_ user.
 
 5. Repeat steps 1 & 2, but reset the shell for user `jenkins`back to `/bin/false` . This prevents direct shell login using the Jenkins account.  
 
+## Architecture
 
+![Architecture](./images/cicdStack.jpg)
+
+The ORM stack that Jenkins will create is based upon the Terraform script in the **terraform** folder. 
+It will create following resources: 
+
+* Virtual Cloud Network
+* Public Subnet
+* Internet Gateway
+* Route table to attach the Internet Gateway to the public subnet
+* Compute instance 
+* SSH public/private key pair that can be found in the terraform state file once the resource stack job is finished
 
